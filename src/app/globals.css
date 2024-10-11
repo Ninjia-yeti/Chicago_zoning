@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Typography and font sizes for different elements */
+h1,
+h2,
+h3 {
+  font-family: "Big Shoulders Text", sans-serif;
+}
+
+p,
+pre {
+  font-size: 1rem; /* Slightly increase default font size */
+  line-height: 1.75rem; /* Increase line height for better readability */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Tabs - Add larger font size, spacing, and improved visibility */
+nav a {
+  font-size: 1rem; /* Larger text */
+  font-weight: 500; /* Slightly bolder */
+  padding: 0.75rem 1.25rem; /* Add more padding */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav a:hover {
+  color: var(--foreground);
+  border-bottom-color: var(--foreground); /* Underline hover effect */
+}
+
+/* Spacing adjustments between sections */
+section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+/* Buttons - Add hover effects and transitions */
+button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Specific button styling for Share and Create */
+.button-share {
+  background-color: #f3f4f6; /* Gray background */
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+.button-create {
+  background-color: #4f46e5; /* Indigo */
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.button-create:hover {
+  background-color: #4338ca; /* Darker indigo on hover */
+}
+
+/* Section differentiation - Add shadows and borders to sections */
+section {
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: white;
+}
+
+/* Adjust base */
+@layer base {
+  @font-face {
+    font-family: "Big Shoulders Display";
+    font-display: swap;
+    src: url(./assets/fonts/Big_Shoulders_Display/static/BigShouldersDisplay-Regular.ttf)
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: "Big Shoulders Text";
+    font-display: swap;
+    src: url(./assets/fonts/Big_Shoulders_Text/static/BigShouldersText-Regular.ttf)
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: "Lora";
+    font-display: swap;
+    src: url(./assets/fonts/Lora/static/Lora-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-display: swap;
+    src: url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  }
+}
+/* Adjust text balance utility */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
